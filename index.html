@@ -858,7 +858,7 @@
     </h1>
     <p class="hero-title"><span class="bracket">[</span> Ethical Hacker & Front-End Developer <span class="bracket">]</span></p>
     <p class="hero-desc">
-      5th Semester Cyber Security student at COMSATS University Islamabad. Passionate about
+      5th Semester Cybersecurity student at COMSATS University Islamabad. Passionate about
       network security, ethical hacking, and building secure web applications.
       Always learning. Always probing.
     </p>
@@ -903,7 +903,7 @@
         <div class="term-line"><span class="out">cybersecurity_student</span></div>
         <div class="term-line">&nbsp;</div>
         <div class="term-line"><span class="prompt">root@kali:~$</span> <span class="cmd">cat about.txt</span></div>
-        <div class="term-line"><span class="comment"># Cyber Security Student | COMSATS Islamabad</span></div>
+        <div class="term-line"><span class="comment"># CS Student | COMSATS Islamabad</span></div>
         <div class="term-line"><span class="comment"># Interests: Pentesting, Web Dev, NetSec</span></div>
         <div class="term-line"><span class="comment"># Always learning, always curious</span></div>
         <div class="term-line">&nbsp;</div>
@@ -934,7 +934,7 @@
         </div>
         <div class="info-row">
           <span class="info-key">SEMESTER</span>
-          <span class="info-val">5th Semester — BS Cyber Security</span>
+          <span class="info-val">5th Semester — BS Computer Science</span>
         </div>
         <div class="info-row">
           <span class="info-key">FOCUS</span>
@@ -1185,7 +1185,7 @@
       </p>
 
       <div class="contact-links">
-        <a href="mailto:your@email.com" class="c-link">
+        <a href="mailto:z.haider2504@gmail.com" class="c-link">
           <span class="c-link-icon">@</span>
           <div class="c-link-text">
             <span class="c-link-label">EMAIL</span>
@@ -1222,21 +1222,28 @@
         <span>bash — send_message.sh</span>
       </div>
       <div class="terminal-body">
-        <div class="contact-form">
+        <form class="contact-form" action="https://formspree.io/f/xojyenlb" method="POST">
+
           <div class="form-group">
             <label class="form-label">NAME</label>
-            <input type="text" class="form-input" placeholder="your_name">
+            <input type="text" name="name" class="form-input" placeholder="your_name" required>
           </div>
+
           <div class="form-group">
-            <label class="form-label">EMAIL</label>
-            <input type="email" class="form-input" placeholder="your@email.com">
+           <label class="form-label">EMAIL</label>
+           <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
           </div>
+
           <div class="form-group">
             <label class="form-label">MESSAGE</label>
-            <textarea class="form-textarea" placeholder="Write your message..."></textarea>
+            <textarea name="message" class="form-textarea" placeholder="Write your message..." required></textarea>
           </div>
-          <button class="btn" onclick="handleSend(this)">Transmit Message</button>
-        </div>
+
+          <input type="hidden" name="_captcha" value="false">
+
+          <button type="submit" class="btn">Transmit Message</button>
+
+        </form>
       </div>
     </div>
   </div>
@@ -1287,19 +1294,6 @@ const obs = new IntersectionObserver(entries=>{
   });
 },{threshold:0.3});
 bars.forEach(b=>obs.observe(b));
-
-// Contact form handler
-function handleSend(btn){
-  btn.textContent = 'Transmitting...';
-  btn.style.opacity = '0.6';
-  setTimeout(()=>{
-    btn.textContent = '✓ Message Sent';
-    btn.style.background = 'var(--green)';
-    btn.style.color = 'var(--bg)';
-    btn.style.opacity = '1';
-  },1800);
-}
-
 // Typing effect for hero tag
 (function(){
   const el = document.querySelector('.hero-tag');
